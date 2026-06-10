@@ -3,18 +3,18 @@ import random
 import os
 import sys
 
-NUM_ROWS = 50
+NUM_ROWS = 100
 
 
-COLUMNS = ["COLUMN_1", "COLUMN_2", "COLUMN_3", "COLUMN_4"]
+COLUMNS = ["price", "quantity", "rating", "category"]
 
 def generate_row():
 
     return {
-        "COLUMN_1": random.randint(0, 100),
-        "COLUMN_2": round(random.uniform(1.5, 9.9), 2),
-        "COLUMN_3": random.randint(0, 100),
-        "COLUMN_4": random.choice(["A", "B", "C"]),
+        "price": round(random.uniform(1.99, 999.99), 2),
+        "quantity": random.randint(1, 200),
+        "rating": round(random.uniform(1.0, 5.0), 1),
+        "category": random.choice(["Electronics", "Clothing", "Food"]),
     }
 
 OUTPUT_DIR = sys.argv[1] if len(sys.argv) > 1 else "/data"
